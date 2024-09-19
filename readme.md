@@ -11,19 +11,19 @@
 {
   "Accounts": [
     {
-      "AccessKeyId": "your-access-key-id",
-      "AccessKeySecret": "your-access-key-secret",
+      "AccessKeyId": "AK",
+      "AccessKeySecret": "SK",
       "maxTraffic": 1000,
-      "regionId": "cn-hongkong",
-      "instanceId": "your-instance-id"
+      "regionId": "cn-hangzhou",
+      "instanceId": "实例ID"
     }
   ],
   "Notification": {
-    "email": "your-email@example.com",
-    "title": "阿里云流量监控告警",
-    "host": "smtp.example.com",
-    "username": "your-smtp-username",
-    "password": "your-smtp-password",
+    "email": "要通知的邮箱地址",
+    "title": "阿里云CDT流量监控告警",
+    "host": "SMTP服务器",
+    "username": "邮箱账号",
+    "password": "邮箱密码或授权码",
     "port": 465,
     "secure": "ssl"
   }
@@ -49,7 +49,7 @@ composer install
 ```
 
 ### 配置文件
-修改 `config.json` 填写阿里云账户和邮件通知相关的配置。
+新建 `config.json` 文件,并填写阿里云账户和邮件通知相关的配置, 具体配置内容请参考上文。
 
 ### 运行项目
 可以通过Web访问或命令行运行项目：
@@ -69,8 +69,9 @@ php index.php
     "flow_total": 1000,
     "flow_used": 950,
     "percentageOfUse": 95,
-    "region": "中国香港",
-    "rate95": true
+    "region": "cn-hangzhou",
+    "rate95": true,
+    "sendNotification": "通知状态"
   }
 ]
 ```
@@ -81,7 +82,7 @@ php index.php
 总流量:1000GB
 已使用流量:950GB
 使用百分比:95%
-地区:中国香港
+地区:华东1(杭州)
 使用率达到95%:是
 通知发送:成功
 ```
