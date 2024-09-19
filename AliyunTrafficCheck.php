@@ -100,7 +100,7 @@ class AliyunTrafficCheck
             使用率达到95%:$isFull
             通知发送:$notificationStatus
             EOF;
-                $log = $log . PHP_EOL;
+                $log = $log . PHP_EOL . PHP_EOL;
                 $logs .= $log;
             }
 
